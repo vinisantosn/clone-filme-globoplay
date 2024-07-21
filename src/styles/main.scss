@@ -1,0 +1,59 @@
+@use "variaveis";
+@use "header";
+
+// CONFIGURAÇÕES GERAIS
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Open Sans", sans-serif;
+}
+
+body {
+  background-color: variaveis.$corDeFundo;
+}
+
+// ESTILIZAÇÃO DE TEXTO
+@mixin text($fontSize: 16px) {
+  font-size: $fontSize;
+  color: variaveis.$corDeTextoPrimario;
+}
+@mixin title($fontSize: 38px) {
+  @include text($fontSize);
+  color: variaveis.$corDeTextoPrimario;
+  font-weight: 700;
+}
+
+.title--big {
+  @include title();
+}
+
+.title--medium {
+  @include title(24px);
+  
+}
+
+.text--medium {
+  @include text();
+  &-silver {
+    color: variaveis.$corDeTextoSecundario;
+  }
+}
+
+.text--small {
+  @include text(14px);
+  &-silver {
+    @include text(14px);
+    color: variaveis.$corDeTextoSecundario;
+  }
+}
+
+.header-container {
+    
+    display: flex;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 4;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
