@@ -19,6 +19,7 @@
   justify-content: space-between;
   align-items: center;
   transition: background-color 0.2s ease, opacity 0.2s linear;
+  box-sizing: border-box;
 
   @media (min-width: 480px) {
     padding: 0 16px;
@@ -378,4 +379,8 @@
   display: none;
   padding: 0;
   width: 64px;
+}
+
+.header__logo path {
+  fill: #fff;
 }
